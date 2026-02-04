@@ -1,65 +1,233 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main
+      style={{
+        maxWidth: "1100px",
+        margin: "0 auto",
+        padding: "56px 24px",
+      }}
+    >
+      {/* HERO */}
+      <section style={{ marginBottom: 64 }}>
+        <h1 style={{ fontSize: 48, marginBottom: 12 }}>
+          Your Name
+        </h1>
+
+        <p style={{ fontSize: 20, color: "#444", maxWidth: 720 }}>
+          AI Engineer focused on building production-ready LLM systems,
+          retrieval pipelines (RAG), and scalable ML infrastructure.
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            marginTop: 24,
+            flexWrap: "wrap",
+          }}
+        >
+          <PrimaryButton href="mailto:you@email.com">
+            Contact
+          </PrimaryButton>
+
+          <SecondaryButton href="https://github.com/yourhandle">
+            GitHub
+          </SecondaryButton>
+
+          <SecondaryButton href="https://www.linkedin.com/in/yourhandle">
+            LinkedIn
+          </SecondaryButton>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ABOUT */}
+      <section style={{ marginBottom: 64 }}>
+        <SectionTitle>About</SectionTitle>
+        <p style={{ maxWidth: 800, lineHeight: 1.7, color: "#333" }}>
+          I design and deploy AI systems that move beyond demos.
+          My work spans LLM applications, retrieval-augmented generation,
+          evaluation pipelines, and ML deployment with a strong focus on
+          reliability, latency, and measurable business value.
+        </p>
+      </section>
+
+      {/* PROJECTS */}
+      <section style={{ marginBottom: 64 }}>
+        <SectionTitle>Selected Projects</SectionTitle>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 20,
+          }}
+        >
+          <ProjectCard
+            title="RAG Knowledge Assistant"
+            description="End-to-end retrieval system with vector search, reranking, citations, and monitoring."
+            tech={["RAG", "Next.js", "pgvector", "OpenAI"]}
+            link="https://github.com/yourhandle/rag-assistant"
+          />
+
+          <ProjectCard
+            title="LLM Evaluation Framework"
+            description="Automated evaluation, regression tests, and prompt versioning for production LLM apps."
+            tech={["Python", "LLM Eval", "CI/CD"]}
+            link="https://github.com/yourhandle/llm-eval"
+          />
+
+          <ProjectCard
+            title="Computer Vision Pipeline"
+            description="Training and inference pipeline for defect detection with model versioning."
+            tech={["PyTorch", "CV", "ONNX"]}
+            link="https://github.com/yourhandle/cv-pipeline"
+          />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* SKILLS */}
+      <section style={{ marginBottom: 64 }}>
+        <SectionTitle>Skills</SectionTitle>
+
+        <ul style={{ lineHeight: 2, paddingLeft: 20 }}>
+          <li>
+            <b>LLMs:</b> Prompting, function calling, agents, RAG
+          </li>
+          <li>
+            <b>MLOps:</b> Docker, CI/CD, monitoring, experiment tracking
+          </li>
+          <li>
+            <b>Data:</b> SQL, vector databases, ETL pipelines
+          </li>
+          <li>
+            <b>Stack:</b> Python, TypeScript, FastAPI, Next.js
+          </li>
+        </ul>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          borderTop: "1px solid #eee",
+          paddingTop: 24,
+          color: "#666",
+          fontSize: 14,
+        }}
+      >
+        © {new Date().getFullYear()} Your Name — AI Engineer
+      </footer>
+    </main>
+  );
+}
+
+/* ---------- Components ---------- */
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h2
+      style={{
+        fontSize: 28,
+        marginBottom: 16,
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function ProjectCard({
+  title,
+  description,
+  tech,
+  link,
+}: {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+}) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        padding: 20,
+        border: "1px solid #eee",
+        borderRadius: 16,
+        textDecoration: "none",
+        color: "inherit",
+        transition: "all 0.2s ease",
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>{title}</h3>
+      <p style={{ color: "#333", lineHeight: 1.6 }}>{description}</p>
+
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        {tech.map((t) => (
+          <span
+            key={t}
+            style={{
+              fontSize: 12,
+              padding: "4px 10px",
+              background: "#f5f5f5",
+              borderRadius: 999,
+            }}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+    </a>
+  );
+}
+
+function PrimaryButton({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      style={{
+        padding: "12px 20px",
+        background: "#111",
+        color: "#fff",
+        borderRadius: 999,
+        textDecoration: "none",
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </a>
+  );
+}
+
+function SecondaryButton({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        padding: "12px 20px",
+        border: "1px solid #ddd",
+        borderRadius: 999,
+        textDecoration: "none",
+        color: "#111",
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </a>
   );
 }
