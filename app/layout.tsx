@@ -1,27 +1,14 @@
+import "./globals.css";
+
 export const metadata = {
-  title: "Your Name | AI Engineer",
-  description:
-    "AI Engineer portfolio — LLM applications, RAG systems, MLOps, and applied machine learning.",
+  title: "CJNunezV | AI Engineer",
+  description: "AI Engineer portfolio — LLM apps, RAG, MLOps, and research.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          fontFamily:
-            "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
-          backgroundColor: "#ffffff",
-          color: "#111",
-        }}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

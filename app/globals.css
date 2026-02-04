@@ -1,26 +1,227 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg: #ffffff;
+  --surface: rgba(15,23,42,0.04);
+  --border: rgba(15,23,42,0.10);
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --shadow: rgba(2,6,23,0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="dark"]{
+  --bg: #0b0f17;
+  --surface: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #e9eef8;
+  --muted: #aab6d6;
+  --primary: #7aa2ff;
+  --shadow: rgba(0,0,0,0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a{ color: inherit; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px var(--shadow);
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag{
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btnPrimary{
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid transparent;
+}
+
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.navInner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.navLinks{
+  display:flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navLinks a{
+  font-size: 13px;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+.navLinks a:hover{
+  background: var(--surface);
+  border-color: var(--border);
+  text-decoration: none;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  padding: 28px 0 60px;
+}
+@media (max-width: 980px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.profile{
+  padding: 20px;
+  position: sticky;
+  top: 74px;
+  height: fit-content;
+}
+@media (max-width: 980px){
+  .profile{ position: relative; top: auto; }
+}
+
+.avatar{
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin: 4px auto 14px;
+  background: var(--surface);
+}
+
+.h1{
+  font-size: 30px;
+  margin: 0;
+  text-align:center;
+}
+.role{
+  text-align:center;
+  margin-top: 10px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+.subtitle{
+  text-align:center;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.iconRow{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.iconBtn{
+  width: 42px;
+  height: 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.content{
+  padding: 22px;
+}
+
+.sectionTitle{
+  font-size: 34px;
+  margin: 0;
+}
+.sectionLine{
+  width: 54px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 999px;
+  margin-top: 10px;
+}
+
+.sectionText{
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+.sectionBlock{
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.cards3{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 980px){
+  .cards3{ grid-template-columns: 1fr; }
 }

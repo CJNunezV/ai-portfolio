@@ -1,233 +1,290 @@
-export default function Home() {
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  FileDown,
+  Youtube,
+  Twitter,
+  Moon,
+  Sun,
+} from "lucide-react";
+
+type Theme = "light" | "dark";
+
+export default function Page() {
+  const [theme, setTheme] = useState<Theme>("light");
+
+  useEffect(() => {
+    // load saved theme
+    const saved = (localStorage.getItem("theme") as Theme) || "light";
+    setTheme(saved);
+    document.documentElement.setAttribute("data-theme", saved);
+  }, []);
+
+  const toggleTheme = () => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("theme", next);
+    document.documentElement.setAttribute("data-theme", next);
+  };
+
   return (
-    <main
-      style={{
-        maxWidth: "1100px",
-        margin: "0 auto",
-        padding: "56px 24px",
-      }}
-    >
-      {/* HERO */}
-      <section style={{ marginBottom: 64 }}>
-        <h1 style={{ fontSize: 48, marginBottom: 12 }}>
-          Your Name
-        </h1>
+    <>
+      {/* NAVBAR */}
+      <div className="nav">
+        <div className="container">
+          <div className="navInner">
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <div
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: 12,
+                  background: "linear-gradient(135deg, var(--primary), #22c55e)",
+                  border: "1px solid var(--border)",
+                }}
+              />
+              <div>
+                <div style={{ fontWeight: 900, letterSpacing: 0.2 }}>CJNunezV</div>
+                <div style={{ fontSize: 12, color: "var(--muted)" }}>AI Engineer</div>
+              </div>
+            </div>
 
-        <p style={{ fontSize: 20, color: "#444", maxWidth: 720 }}>
-          AI Engineer focused on building production-ready LLM systems,
-          retrieval pipelines (RAG), and scalable ML infrastructure.
-        </p>
+            <div className="navLinks">
+              <a href="#about">About</a>
+              <a href="#expertise">Expertise</a>
+              <a href="#research">Research</a>
+              <a href="#projects">Projects</a>
+              <a href="#publications">Publications</a>
+              <a href="#videos">Videos</a>
+              <a href="#recommendations">Recommendations</a>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            marginTop: 24,
-            flexWrap: "wrap",
-          }}
-        >
-          <PrimaryButton href="mailto:you@email.com">
-            Contact
-          </PrimaryButton>
-
-          <SecondaryButton href="https://github.com/yourhandle">
-            GitHub
-          </SecondaryButton>
-
-          <SecondaryButton href="https://www.linkedin.com/in/yourhandle">
-            LinkedIn
-          </SecondaryButton>
+              <button className="btn" onClick={toggleTheme} aria-label="Toggle theme">
+                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      {/* ABOUT */}
-      <section style={{ marginBottom: 64 }}>
-        <SectionTitle>About</SectionTitle>
-        <p style={{ maxWidth: 800, lineHeight: 1.7, color: "#333" }}>
-          I design and deploy AI systems that move beyond demos.
-          My work spans LLM applications, retrieval-augmented generation,
-          evaluation pipelines, and ML deployment with a strong focus on
-          reliability, latency, and measurable business value.
-        </p>
-      </section>
+      {/* BODY */}
+      <div className="container">
+        <div className="grid">
+          {/* LEFT PROFILE */}
+          <aside className="card profile">
+            <div className="avatar">
+              <Image
+                src="/avatar.jpg"
+                alt="Profile photo"
+                width={220}
+                height={220}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                priority
+              />
+            </div>
 
-      {/* PROJECTS */}
-      <section style={{ marginBottom: 64 }}>
-        <SectionTitle>Selected Projects</SectionTitle>
+            <h1 className="h1">Christopher Núñez</h1>
+            <div className="role">AI Engineer</div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 20,
-          }}
-        >
-          <ProjectCard
-            title="RAG Knowledge Assistant"
-            description="End-to-end retrieval system with vector search, reranking, citations, and monitoring."
-            tech={["RAG", "Next.js", "pgvector", "OpenAI"]}
-            link="https://github.com/yourhandle/rag-assistant"
-          />
+            <div className="subtitle">
+              Engineer • Researcher • Builder <br />
+              Generative AI • RAG • MLOps
+            </div>
 
-          <ProjectCard
-            title="LLM Evaluation Framework"
-            description="Automated evaluation, regression tests, and prompt versioning for production LLM apps."
-            tech={["Python", "LLM Eval", "CI/CD"]}
-            link="https://github.com/yourhandle/llm-eval"
-          />
+            <div style={{ marginTop: 14, textAlign: "center" }}>
+              <span className="pill">A human passionate about technology, business, and science.</span>
+            </div>
 
-          <ProjectCard
-            title="Computer Vision Pipeline"
-            description="Training and inference pipeline for defect detection with model versioning."
-            tech={["PyTorch", "CV", "ONNX"]}
-            link="https://github.com/yourhandle/cv-pipeline"
-          />
+            <div className="iconRow">
+              <a className="iconBtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                <Linkedin size={18} />
+              </a>
+              <a className="iconBtn" href="https://github.com/CJNunezV" target="_blank" rel="noreferrer">
+                <Github size={18} />
+              </a>
+              <a className="iconBtn" href="mailto:you@email.com">
+                <Mail size={18} />
+              </a>
+              <a className="iconBtn" href="#" target="_blank" rel="noreferrer" aria-label="Resume">
+                <FileDown size={18} />
+              </a>
+              <a className="iconBtn" href="https://youtube.com" target="_blank" rel="noreferrer">
+                <Youtube size={18} />
+              </a>
+              <a className="iconBtn" href="https://twitter.com" target="_blank" rel="noreferrer">
+                <Twitter size={18} />
+              </a>
+            </div>
+          </aside>
+
+          {/* RIGHT CONTENT */}
+          <section className="card content">
+            {/* ABOUT */}
+            <div id="about">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">About me</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <div className="sectionText" style={{ maxWidth: 820, margin: "0 auto" }}>
+                <p>
+                  IT professional with experience building data-driven products and generative AI solutions.
+                  I specialize in designing scalable systems with a holistic view of business strategy,
+                  delivery, and engineering.
+                </p>
+                <p>
+                  My mission is to empower organizations through AI and data, translating complex needs into
+                  high-value, measurable solutions that drive innovation.
+                </p>
+                <p>
+                  If you want to collaborate or hire me, you can <a href="mailto:you@email.com" style={{ color: "var(--primary)", fontWeight: 700 }}>write me</a>.
+                </p>
+              </div>
+            </div>
+
+            {/* EXPERTISE */}
+            <div className="sectionBlock" id="expertise">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Expertise</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <div className="cards3">
+                <MiniCard title="LLM Apps" items={["Tools / Function calling", "Agents", "Prompting + guardrails"]} />
+                <MiniCard title="RAG Systems" items={["Vector search", "Reranking", "Citations + eval"]} />
+                <MiniCard title="MLOps" items={["Docker", "CI/CD", "Monitoring + quality checks"]} />
+              </div>
+            </div>
+
+            {/* RESEARCH */}
+            <div className="sectionBlock" id="research">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Research</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
+                Topics: evaluation for LLM systems, retrieval quality, hallucination reduction,
+                and product reliability.
+              </p>
+            </div>
+
+            {/* PROJECTS */}
+            <div className="sectionBlock" id="projects">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Projects</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
+                <ProjectRow
+                  title="RAG Knowledge Assistant"
+                  desc="End-to-end RAG with reranking, citations, and monitoring."
+                  tags={["RAG", "Next.js", "pgvector"]}
+                  link="https://github.com/CJNunezV"
+                />
+                <ProjectRow
+                  title="LLM Evaluation Harness"
+                  desc="Automated tests + regression suite for prompts and models."
+                  tags={["Python", "Eval", "CI/CD"]}
+                  link="https://github.com/CJNunezV"
+                />
+                <ProjectRow
+                  title="Embeddings ETL Pipeline"
+                  desc="Batching, retries, cost control, and observability for embeddings."
+                  tags={["ETL", "Embeddings", "Monitoring"]}
+                  link="https://github.com/CJNunezV"
+                />
+              </div>
+            </div>
+
+            {/* PUBLICATIONS */}
+            <div className="sectionBlock" id="publications">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Publications</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
+                Add your papers, blog posts, or technical notes here.
+              </p>
+            </div>
+
+            {/* VIDEOS */}
+            <div className="sectionBlock" id="videos">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Videos</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
+                Talks, workshops, or YouTube content.
+              </p>
+            </div>
+
+            {/* RECOMMENDATIONS */}
+            <div className="sectionBlock" id="recommendations">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Recommendations</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
+                Add testimonials from LinkedIn or clients (short and specific).
+              </p>
+            </div>
+          </section>
         </div>
-      </section>
-
-      {/* SKILLS */}
-      <section style={{ marginBottom: 64 }}>
-        <SectionTitle>Skills</SectionTitle>
-
-        <ul style={{ lineHeight: 2, paddingLeft: 20 }}>
-          <li>
-            <b>LLMs:</b> Prompting, function calling, agents, RAG
-          </li>
-          <li>
-            <b>MLOps:</b> Docker, CI/CD, monitoring, experiment tracking
-          </li>
-          <li>
-            <b>Data:</b> SQL, vector databases, ETL pipelines
-          </li>
-          <li>
-            <b>Stack:</b> Python, TypeScript, FastAPI, Next.js
-          </li>
-        </ul>
-      </section>
-
-      {/* FOOTER */}
-      <footer
-        style={{
-          borderTop: "1px solid #eee",
-          paddingTop: 24,
-          color: "#666",
-          fontSize: 14,
-        }}
-      >
-        © {new Date().getFullYear()} Your Name — AI Engineer
-      </footer>
-    </main>
+      </div>
+    </>
   );
 }
 
-/* ---------- Components ---------- */
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function MiniCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <h2
-      style={{
-        fontSize: 28,
-        marginBottom: 16,
-      }}
-    >
-      {children}
-    </h2>
+    <div className="card" style={{ padding: 16 }}>
+      <div style={{ fontWeight: 900, marginBottom: 10 }}>{title}</div>
+      <ul style={{ margin: 0, paddingLeft: 18, color: "var(--muted)", lineHeight: 1.9 }}>
+        {items.map((x) => (
+          <li key={x}>{x}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-function ProjectCard({
+function ProjectRow({
   title,
-  description,
-  tech,
+  desc,
+  tags,
   link,
 }: {
   title: string;
-  description: string;
-  tech: string[];
+  desc: string;
+  tags: string[];
   link: string;
 }) {
   return (
     <a
+      className="card"
       href={link}
       target="_blank"
       rel="noreferrer"
-      style={{
-        padding: 20,
-        border: "1px solid #eee",
-        borderRadius: 16,
-        textDecoration: "none",
-        color: "inherit",
-        transition: "all 0.2s ease",
-      }}
+      style={{ padding: 16, display: "block" }}
     >
-      <h3 style={{ marginTop: 0 }}>{title}</h3>
-      <p style={{ color: "#333", lineHeight: 1.6 }}>{description}</p>
-
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        {tech.map((t) => (
-          <span
-            key={t}
-            style={{
-              fontSize: 12,
-              padding: "4px 10px",
-              background: "#f5f5f5",
-              borderRadius: 999,
-            }}
-          >
+      <div style={{ fontWeight: 900 }}>{title}</div>
+      <div style={{ marginTop: 6, color: "var(--muted)", lineHeight: 1.7 }}>{desc}</div>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 10 }}>
+        {tags.map((t) => (
+          <span key={t} className="tag">
             {t}
           </span>
         ))}
       </div>
-    </a>
-  );
-}
-
-function PrimaryButton({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      style={{
-        padding: "12px 20px",
-        background: "#111",
-        color: "#fff",
-        borderRadius: 999,
-        textDecoration: "none",
-        fontWeight: 500,
-      }}
-    >
-      {children}
-    </a>
-  );
-}
-
-function SecondaryButton({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      style={{
-        padding: "12px 20px",
-        border: "1px solid #ddd",
-        borderRadius: 999,
-        textDecoration: "none",
-        color: "#111",
-        fontWeight: 500,
-      }}
-    >
-      {children}
     </a>
   );
 }
