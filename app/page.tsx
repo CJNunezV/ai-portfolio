@@ -167,10 +167,78 @@ export default function Page() {
                 <div className="sectionLine" style={{ margin: "10px auto 0" }} />
               </div>
 
-              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
-                Topics: evaluation for LLM systems, retrieval quality, hallucination reduction,
-                and product reliability.
-              </p>
+              <div style={{ maxWidth: 900, margin: "16px auto 0" }}>
+                <Paper
+                  venue="ISARC 2026"
+                  title="An automated framework to quantify exposure of informal urban settlements using UAV and Scan-to-BIM"
+                  year="2026"
+                  doi="In process"
+                  link="https://doi.org/10.22260/ISARC2025/0194"
+                  tags={[" Scan-to-BIM", "Urban Digitalization", "UAV"]}
+                  logo="/conferences/ISARC-2026.png"
+                />
+
+                <Paper
+                  venue="ISARC 2025"
+                  title="Algorithm development for automatic detection of progressive damage in tunnel cross-sectional geometry"
+                  year="2025"
+                  doi="10.22260/ISARC2025/0194"
+                  link="https://doi.org/10.22260/ISARC2025/0194"
+                  tags={["Tunnel", "Point cloud", "Open3D"]}
+                  logo="/conferences/ISARC-2025.png"
+                />
+
+                <Paper
+                  venue="ISARC 2024"
+                  title="3D reconstruction of a bridge with concrete damage classification using deep learning"
+                  year="2024"
+                  doi="10.22260/ISARC2024/0094"
+                  link="https://doi.org/10.22260/ISARC2024/0094"
+                  tags={["Deep Learning", "Damage Detection", "3D Reconstruction"]}
+                  logo="/conferences/ISARC-2024.png"
+                />
+
+                <Paper
+                  venue="ISARC 2023"
+                  title="3D Printing: An opportunity for the sustainable development of building construction"
+                  year="2023"
+                  doi="10.22260/ISARC2023/0096"
+                  link="https://doi.org/10.22260/ISARC2023/0096"
+                  tags={["3D Printing", "Sustainable Construction"]}
+                  logo="/conferences/ISARC-2023.png"
+                />
+
+                <Paper
+                  venue="CONIITI 2023"
+                  title="Robotics in building construction: Advantages and Barriers"
+                  year="2023"
+                  doi="10.1109/CONIITI61170.2023.10324131"
+                  link="https://doi.org/10.1109/CONIITI61170.2023.10324131"
+                  tags={["Robotics", "Construction", "Automation"]}
+                  logo="/conferences/ISARC-2023.png"
+                />
+
+                <Paper
+                  venue="CONIITI 2023"
+                  title="Virtual reality for design and site planning in construction projects: Advantages and barriers"
+                  year="2023"
+                  doi="10.1109/CONIITI61170.2023.10324023"
+                  link="https://doi.org/10.1109/CONIITI61170.2023.10324023"
+                  tags={["VR", "Planning", "AEC"]}
+                  logo="/conferences/ISARC-2023.png"
+                />              
+
+                <Paper
+                  venue="CONIITI 2021"
+                  title={`An Analysis of LEED Certification's Adaptation to Design and Construction of Sustainable Buildings in Peru`}
+                  year="2021"
+                  doi="10.1109/CONIITI53815.2021.9619628"
+                  link="https://doi.org/10.1109/CONIITI53815.2021.9619628"
+                  tags={["Sustainability", "LEED", "Construction"]}
+                  logo="/conferences/ISARC-2023.png"
+                />
+
+              </div>
             </div>
 
             {/* PROJECTS */}
@@ -286,5 +354,96 @@ function ProjectRow({
         ))}
       </div>
     </a>
+  );
+}
+
+
+function Paper({
+  venue,
+  title,
+  year,
+  doi,
+  link,
+  tags,
+  logo,
+}: {
+  venue: string;
+  title: string;
+  year: string;
+  doi: string;
+  link: string;
+  tags: string[];
+  logo: string;
+}) {
+  return (
+    <div className="card" style={{ padding: 16, marginBottom: 12 }}>
+      <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+        {/* Conference Logo */}
+        <div
+          style={{
+            width: 64,
+            height: 64,
+            borderRadius: 12,
+            border: "1px solid var(--border)",
+            background: "var(--surface)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}
+        >
+          <Image
+            src={logo}
+            alt={`${venue} logo`}
+            width={48}
+            height={48}
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+
+        {/* Paper Content */}
+        <div style={{ flex: 1 }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 12,
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ fontWeight: 900 }}>
+              {venue}{" "}
+              <span style={{ color: "var(--muted)", fontWeight: 700 }}>
+                • {year}
+              </span>
+            </div>
+
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "var(--primary)", fontWeight: 800 }}
+            >
+              View DOI
+            </a>
+          </div>
+
+          <div style={{ marginTop: 8, lineHeight: 1.7 }}>
+            <div style={{ fontWeight: 800 }}>{title}</div>
+            <div style={{ marginTop: 6, color: "var(--muted)", fontSize: 13 }}>
+              DOI: {doi}
+            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 10 }}>
+            {tags.map((t) => (
+              <span key={t} className="tag">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
