@@ -174,7 +174,7 @@ export default function Page() {
                   year="2026"
                   doi="In process"
                   link="https://doi.org/10.22260/ISARC2025/0194"
-                  tags={[" Scan-to-BIM", "Urban Digitalization", "UAV"]}
+                  tags={["Scan-to-BIM", "Urban Digitalization", "UAV"]}
                   logo="/conferences/ISARC-2026.png"
                 />
 
@@ -215,7 +215,7 @@ export default function Page() {
                   doi="10.1109/CONIITI61170.2023.10324131"
                   link="https://doi.org/10.1109/CONIITI61170.2023.10324131"
                   tags={["Robotics", "Construction", "Automation"]}
-                  logo="/conferences/ISARC-2023.png"
+                  logo="/conferences/CONIITI.png"
                 />
 
                 <Paper
@@ -225,7 +225,7 @@ export default function Page() {
                   doi="10.1109/CONIITI61170.2023.10324023"
                   link="https://doi.org/10.1109/CONIITI61170.2023.10324023"
                   tags={["VR", "Planning", "AEC"]}
-                  logo="/conferences/ISARC-2023.png"
+                  logo="/conferences/CONIITI.png"
                 />              
 
                 <Paper
@@ -235,7 +235,7 @@ export default function Page() {
                   doi="10.1109/CONIITI53815.2021.9619628"
                   link="https://doi.org/10.1109/CONIITI53815.2021.9619628"
                   tags={["Sustainability", "LEED", "Construction"]}
-                  logo="/conferences/ISARC-2023.png"
+                  logo="/conferences/CONIITI.png"
                 />
 
               </div>
@@ -358,6 +358,7 @@ function ProjectRow({
 }
 
 
+
 function Paper({
   venue,
   title,
@@ -376,74 +377,111 @@ function Paper({
   logo: string;
 }) {
   return (
-    <div className="card" style={{ padding: 16, marginBottom: 12 }}>
-      <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-        {/* Conference Logo */}
+    <div
+      className="card"
+      style={{
+        padding: 18,
+        marginBottom: 14,
+        background: "#ffffff", // ✅ fondo blanco
+      }}
+    >
+      {/* Header */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          gap: 16,
+        }}
+      >
+        {/* Left: venue + title */}
+        <div style={{ flex: 1 }}>
+          <div style={{ fontWeight: 900, marginBottom: 6 }}>
+            {venue}{" "}
+            <span style={{ color: "var(--muted)", fontWeight: 700 }}>
+              • {year}
+            </span>
+          </div>
+
+          <div style={{ fontSize: 16, fontWeight: 800, lineHeight: 1.6 }}>
+            {title}
+          </div>
+        </div>
+
+        {/* Right: DOI + logo */}
         <div
           style={{
-            width: 64,
-            height: 64,
-            borderRadius: 12,
-            border: "1px solid var(--border)",
-            background: "var(--surface)",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: 10,
+            minWidth: 120,
           }}
         >
-          <Image
-            src={logo}
-            alt={`${venue} logo`}
-            width={48}
-            height={48}
-            style={{ objectFit: "contain" }}
-          />
-        </div>
-
-        {/* Paper Content */}
-        <div style={{ flex: 1 }}>
-          <div
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: 12,
-              flexWrap: "wrap",
+              color: "var(--primary)",
+              fontWeight: 800,
+              fontSize: 14,
             }}
           >
-            <div style={{ fontWeight: 900 }}>
-              {venue}{" "}
-              <span style={{ color: "var(--muted)", fontWeight: 700 }}>
-                • {year}
-              </span>
-            </div>
+            View DOI
+          </a>
 
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              style={{ color: "var(--primary)", fontWeight: 800 }}
-            >
-              View DOI
-            </a>
-          </div>
-
-          <div style={{ marginTop: 8, lineHeight: 1.7 }}>
-            <div style={{ fontWeight: 800 }}>{title}</div>
-            <div style={{ marginTop: 6, color: "var(--muted)", fontSize: 13 }}>
-              DOI: {doi}
-            </div>
-          </div>
-
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 10 }}>
-            {tags.map((t) => (
-              <span key={t} className="tag">
-                {t}
-              </span>
-            ))}
+          {/* Logo BELOW View DOI */}
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: 14,
+              border: "1px solid var(--border)",
+              background: "#ffffff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src={logo}
+              alt={`${venue} logo`}
+              width={56}
+              height={56}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
+      </div>
+
+      {/* DOI text */}
+      <div
+        style={{
+          marginTop: 10,
+          fontSize: 13,
+          color: "var(--muted)",
+        }}
+      >
+        DOI: {doi}
+      </div>
+
+      {/* Tags */}
+      <div
+        style={{
+          display: "flex",
+          gap: 8,
+          flexWrap: "wrap",
+          marginTop: 12,
+        }}
+      >
+        {tags.map((t) => (
+          <span key={t} className="tag">
+            {t}
+          </span>
+        ))}
       </div>
     </div>
   );
 }
+
