@@ -102,8 +102,26 @@ a:hover{ text-decoration: underline; }
 .navLinks{
   display:flex;
   gap: 16px;
-  flex-wrap: wrap;
   align-items: center;
+}
+
+/* 📱 MODO MÓVIL */
+@media (max-width: 768px){
+  .navLinks{
+    flex-wrap: nowrap;            /* no saltar línea */
+    overflow-x: auto;             /* scroll horizontal */
+    gap: 12px;
+    scrollbar-width: none;
+  }
+
+  .navLinks::-webkit-scrollbar{
+    display: none;
+  }
+
+  .navLinks a,
+  .navLinks button{
+    flex: 0 0 auto;
+  }
 }
 
 .navLinks a{

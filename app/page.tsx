@@ -249,9 +249,9 @@ export default function Page() {
                     { label: "Overview", href: "#" },
                   ]}
                   images={[
-                    "/projects/navis/navis.png",
-                    "/projects/navis/navis2.png",
-                    "/projects/navis/navis3.png",
+                    "/projects/navis/Navis.png",
+                    "/projects/navis/Navis2.png",
+                    "/projects/navis/Navis3.png",
                   ]}
                   highlights={[
                     "Unified quantities across multiple categories and model elements",
