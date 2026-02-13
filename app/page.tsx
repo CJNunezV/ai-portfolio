@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import {
   Github,
@@ -9,6 +10,7 @@ import {
   FileDown,
   Youtube,
   Twitter,
+  BookOpen,
   Moon,
   Sun,
 } from "lucide-react";
@@ -57,9 +59,8 @@ export default function Page() {
             <div className="navLinks">
               <a href="#about">About</a>
               <a href="#expertise">Expertise</a>
-              <a href="#research">Research</a>
               <a href="#projects">Projects</a>
-              <a href="#publications">Publications</a>
+              <a href="#research">Research & Publications</a>
               <a href="#videos">Videos</a>
               <a href="#recommendations">Recommendations</a>
 
@@ -87,26 +88,29 @@ export default function Page() {
               />
             </div>
 
-            <h1 className="h1">Christopher Núñez</h1>
-            <div className="role">AI Engineer</div>
+            <h1 className="h1">Christopher Nuñez</h1>
+            <div className="role">Research Analyst</div>
 
             <div className="subtitle">
-              Engineer • Researcher • Builder <br />
-              Generative AI • RAG • MLOps
+              Civil Engineer • Computational Design <br />
+              AI & Point Clouds • BIM Developer
             </div>
 
             <div style={{ marginTop: 14, textAlign: "center" }}>
-              <span className="pill">A human passionate about technology, business, and science.</span>
+              <span className="pill">Bridging civil engineering, artificial intelligence, and digital twins for the built environment.</span>
             </div>
 
             <div className="iconRow">
-              <a className="iconBtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+              <a className="iconBtn" href="https://www.linkedin.com/in/christopher-nunez-v/" target="_blank" rel="noreferrer">
                 <Linkedin size={18} />
               </a>
               <a className="iconBtn" href="https://github.com/CJNunezV" target="_blank" rel="noreferrer">
                 <Github size={18} />
               </a>
-              <a className="iconBtn" href="mailto:you@email.com">
+              <a className="iconBtn" href="https://www.researchgate.net/profile/Christopher-Nunez-Varillas?ev=hdr_xprf" target="_blank" rel="noreferrer" aria-label="ResearchGate">
+                <BookOpen size={18} />
+              </a>
+              <a className="iconBtn" href="christopher.nunez.v@gmail.com">
                 <Mail size={18} />
               </a>
               <a className="iconBtn" href="#" target="_blank" rel="noreferrer" aria-label="Resume">
@@ -132,16 +136,13 @@ export default function Page() {
 
               <div className="sectionText" style={{ maxWidth: 820, margin: "0 auto" }}>
                 <p>
-                  IT professional with experience building data-driven products and generative AI solutions.
-                  I specialize in designing scalable systems with a holistic view of business strategy,
-                  delivery, and engineering.
+                  Civil Engineer and computational researcher with over 3 years of experience developing data-driven systems for the built environment, including point cloud processing, BIM automation, and AI-assisted reconstruction workflows. I specialize in designing intelligent digital models and scalable pipelines that connect raw spatial data, engineering logic, and research-driven outcomes.
                 </p>
                 <p>
-                  My mission is to empower organizations through AI and data, translating complex needs into
-                  high-value, measurable solutions that drive innovation.
+                  My mission is to advance digital construction and smart building technologies through AI and computational methods, translating complex spatial and engineering challenges into high-impact, measurable solutions for research, industry, and academia.
                 </p>
                 <p>
-                  If you want to collaborate or hire me, you can <a href="mailto:you@email.com" style={{ color: "var(--primary)", fontWeight: 700 }}>write me</a>.
+                  If you want to collaborate on research, academic projects, or innovative engineering solutions, feel free to <a href="christopher.nunez.v@gmail.com" style={{ color: "var(--primary)", fontWeight: 700 }}>write me</a>.
                 </p>
               </div>
             </div>
@@ -153,91 +154,33 @@ export default function Page() {
                 <div className="sectionLine" style={{ margin: "10px auto 0" }} />
               </div>
 
-              <div className="cards3">
-                <MiniCard title="LLM Apps" items={["Tools / Function calling", "Agents", "Prompting + guardrails"]} />
-                <MiniCard title="RAG Systems" items={["Vector search", "Reranking", "Citations + eval"]} />
-                <MiniCard title="MLOps" items={["Docker", "CI/CD", "Monitoring + quality checks"]} />
-              </div>
-            </div>
-
-            {/* RESEARCH */}
-            <div className="sectionBlock" id="research">
-              <div style={{ textAlign: "center" }}>
-                <h2 className="sectionTitle">Research</h2>
-                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
-              </div>
-
-              <div style={{ maxWidth: 900, margin: "16px auto 0" }}>
-                <Paper
-                  venue="ISARC 2026"
-                  title="An automated framework to quantify exposure of informal urban settlements using UAV and Scan-to-BIM"
-                  year="2026"
-                  doi="In process"
-                  link="https://doi.org/10.22260/ISARC2025/0194"
-                  tags={["Scan-to-BIM", "Urban Digitalization", "UAV"]}
-                  logo="/conferences/ISARC-2026.png"
+              <div className="cards3" style={{ marginTop: 16 }}>
+                <ExpertCard
+                  title="Programming"
+                  items={[
+                    { icon: "python", label: "Python", hint: "Open3D • OpenCV • NumPy" },
+                    { icon: "revit", label: "C#", hint: "Revit API • Navisworks API • CAD API" },
+                    { icon: "node", label: "JavaScript / Node.js", hint: "Backend • Tooling" },
+                  ]}
                 />
 
-                <Paper
-                  venue="ISARC 2025"
-                  title="Algorithm development for automatic detection of progressive damage in tunnel cross-sectional geometry"
-                  year="2025"
-                  doi="10.22260/ISARC2025/0194"
-                  link="https://doi.org/10.22260/ISARC2025/0194"
-                  tags={["Tunnel", "Point cloud", "Open3D"]}
-                  logo="/conferences/ISARC-2025.png"
+                <ExpertCard
+                  title="Technologies"
+                  items={[
+                    { icon: "bim", label: "BIM", hint: "OpenBIM • IFC • Revit • Navisworks" },
+                    { icon: "cloud", label: "Point Clouds", hint: "LiDAR • Recap • Photogrammetry" },
+                    { icon: "twin", label: "Digital Twins", hint: "Data + Models • Sensors • Interoperability" },
+                  ]}
                 />
 
-                <Paper
-                  venue="ISARC 2024"
-                  title="3D reconstruction of a bridge with concrete damage classification using deep learning"
-                  year="2024"
-                  doi="10.22260/ISARC2024/0094"
-                  link="https://doi.org/10.22260/ISARC2024/0094"
-                  tags={["Deep Learning", "Damage Detection", "3D Reconstruction"]}
-                  logo="/conferences/ISARC-2024.png"
+                <ExpertCard
+                  title="Research"
+                  items={[
+                    { icon: "write", label: "Academic Writing", hint: "Clear & structured" },
+                    { icon: "paper", label: "Peer-reviewed Publications", hint: "Conference papers" },
+                    { icon: "talk", label: "Conference Presentations", hint: "Slides + Delivery" },
+                  ]}
                 />
-
-                <Paper
-                  venue="ISARC 2023"
-                  title="3D Printing: An opportunity for the sustainable development of building construction"
-                  year="2023"
-                  doi="10.22260/ISARC2023/0096"
-                  link="https://doi.org/10.22260/ISARC2023/0096"
-                  tags={["3D Printing", "Sustainable Construction"]}
-                  logo="/conferences/ISARC-2023.png"
-                />
-
-                <Paper
-                  venue="CONIITI 2023"
-                  title="Robotics in building construction: Advantages and Barriers"
-                  year="2023"
-                  doi="10.1109/CONIITI61170.2023.10324131"
-                  link="https://doi.org/10.1109/CONIITI61170.2023.10324131"
-                  tags={["Robotics", "Construction", "Automation"]}
-                  logo="/conferences/CONIITI.png"
-                />
-
-                <Paper
-                  venue="CONIITI 2023"
-                  title="Virtual reality for design and site planning in construction projects: Advantages and barriers"
-                  year="2023"
-                  doi="10.1109/CONIITI61170.2023.10324023"
-                  link="https://doi.org/10.1109/CONIITI61170.2023.10324023"
-                  tags={["VR", "Planning", "AEC"]}
-                  logo="/conferences/CONIITI.png"
-                />              
-
-                <Paper
-                  venue="CONIITI 2021"
-                  title={`An Analysis of LEED Certification's Adaptation to Design and Construction of Sustainable Buildings in Peru`}
-                  year="2021"
-                  doi="10.1109/CONIITI53815.2021.9619628"
-                  link="https://doi.org/10.1109/CONIITI53815.2021.9619628"
-                  tags={["Sustainability", "LEED", "Construction"]}
-                  logo="/conferences/CONIITI.png"
-                />
-
               </div>
             </div>
 
@@ -248,41 +191,208 @@ export default function Page() {
                 <div className="sectionLine" style={{ margin: "10px auto 0" }} />
               </div>
 
-              <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
-                <ProjectRow
-                  title="RAG Knowledge Assistant"
-                  desc="End-to-end RAG with reranking, citations, and monitoring."
-                  tags={["RAG", "Next.js", "pgvector"]}
-                  link="https://github.com/CJNunezV"
+              <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
+                <BigProjectCard
+                  icon="scan2bim"
+                  title="Scan-to-BIM Automation App — Point Cloud → BIM"
+                  desc="Developed an end-to-end Scan-to-BIM automation pipeline using Python, OpenCV, and Open3D. The app streamlines preprocessing and processing of point clouds and accelerates BIM model generation, turning raw scans into standardized BIM-ready outputs in under one hour."
+                  impact={[
+                    "End-to-end pipeline (preprocessing → processing → BIM model)",
+                    "BIM-ready results in < 1 hour",
+                    "Standardized deliverables + reduced manual work",
+                  ]}
+                  tags={["Python", "OpenCV", "Open3D", "Point Clouds", "Scan-to-BIM", "Automation"]}
+                  links={[{ label: "Overview", href: "#" }]}
+                  images={[
+                    "/projects/s2b/s2b.png",
+                    "/projects/s2b/s2b2.png",
+                    "/projects/s2b/s2b3.png",
+                  ]}
+                  highlights={[
+                    "Automates point cloud preprocessing and cleanup to improve model consistency",
+                    "Processing stage extracts structured information to support faster modeling decisions",
+                    "Generates repeatable BIM outputs with a standardized workflow across projects",
+                  ]}
                 />
-                <ProjectRow
-                  title="LLM Evaluation Harness"
-                  desc="Automated tests + regression suite for prompts and models."
-                  tags={["Python", "Eval", "CI/CD"]}
-                  link="https://github.com/CJNunezV"
+
+                <BigProjectCard
+                  icon="revitqa"
+                  title="Revit Add-in — Automated BIM Model QA/QC (Geometry + COBie + OmniClass) → Excel Report"
+                  desc="Developed a Revit add-in that automates BIM coordination review by validating geometry and data integrity (COBie and OmniClass). The add-in generates an Excel review report automatically, standardizing the QA/QC process across large-scale model libraries."
+                  impact={[
+                    "Reduced coordination review from 7 days to 2 days",
+                    "Average reduction: 71.42%",
+                    "Scales across 2 TB of BIM models",
+                  ]}
+                  tags={["Revit API", "C#", "COBie", "OmniClass", "QA/QC", "Excel Reporting"]}
+                  links={[
+                    { label: "Overview", href: "#" },
+                  ]}
+                  images={[
+                    "/projects/revisionlap/revisionlap.png",
+                    "/projects/revisionlap/revisionlap2.png",
+                    "/projects/revisionlap/revisionlap3.png",
+                  ]}
+                  highlights={[
+                    "Automatic geometry checks + data validation rules",
+                    "Consistent, repeatable review criteria across teams",
+                    "Excel report generated in one click (issues + summary)",
+                  ]}
                 />
-                <ProjectRow
-                  title="Embeddings ETL Pipeline"
-                  desc="Batching, retries, cost control, and observability for embeddings."
-                  tags={["ETL", "Embeddings", "Monitoring"]}
-                  link="https://github.com/CJNunezV"
+                <BigProjectCard
+                  icon="navis"
+                  title="Navisworks Add-in — Automated Quantity Takeoff"
+                  desc="Developed a Navisworks API add-in to calculate metrados reliably across the entire model, avoiding Revit’s category-only limitation."
+                  impact={["Faster takeoffs", "Consistent quantification", "Reduced manual errors"]}
+                  tags={["Navisworks API", "C#", "BIM", "Quantity Takeoff"]}
+                  links={[
+                    { label: "Overview", href: "#" },
+                  ]}
+                  images={[
+                    "/projects/navis/navis.png",
+                    "/projects/navis/navis2.png",
+                    "/projects/navis/navis3.png",
+                  ]}
+                  highlights={[
+                    "Unified quantities across multiple categories and model elements",
+                    "Reusable workflow for different projects and models",
+                    "Export-ready outputs for reporting",
+                  ]}
+                />
+
+                <BigProjectCard
+                  icon="dalux"
+                  title="Airport Asset Management — Dalux FM + IFC + COBie + QR"
+                  desc="Implemented Dalux FM for asset management in an airport, ensuring interoperability using IFC models and COBie data. Deployed QR codes to link physical spaces to digital asset data."
+                  impact={["Operational visibility", "Interoperable data", "Faster asset lookup via QR"]}
+                  tags={["Dalux FM", "IFC", "COBie", "Asset Management", "QR Codes"]}
+                  links={[
+                    { label: "Overview", href: "#" },
+                  ]}
+                  images={[
+                    "/projects/dalux/dalux.png",
+                    "/projects/dalux/dalux2.png",
+                    "/projects/dalux/dalux3.png",
+                  ]}
+                  highlights={[
+                    "Mapped IFC + COBie to operational asset workflows",
+                    "Connected physical spaces with QR-based access to asset records",
+                    "Improved maintainability and handover data quality",
+                  ]}
+                />
+
+                <BigProjectCard
+                  icon="iot"
+                  title="IoT Environmental Monitoring + BIM — Digital Twin "
+                  desc="Developed IoT devices (ESP32 + sensors) to monitor environmental data in buildings and connect it to a BIM model — enabling early-stage digital twin workflows."
+                  impact={["Real-time monitoring", "BIM-linked data", "Digital twin baseline"]}
+                  tags={["IoT", "ESP32", "Sensors", "BIM", "Digital Twins"]}
+                  links={[
+                    { label: "Overview", href: "#" },
+                  ]}
+                  images={[
+                    "/projects/iot/iot.jpg",
+                    "/projects/iot/iot2.png",
+                    "/projects/iot/iot3.png",
+                  ]}
+                  highlights={[
+                    "Sensor data streamed/connected to building model context",
+                    "Foundation for dashboards, alerts, and twin simulations",
+                    "Designed for extensibility (additional sensors + spaces)",
+                  ]}
                 />
               </div>
             </div>
 
-            {/* PUBLICATIONS */}
-            <div className="sectionBlock" id="publications">
+            {/* RESEARCH */}
+            <div className="sectionBlock" id="research">
               <div style={{ textAlign: "center" }}>
-                <h2 className="sectionTitle">Publications</h2>
+                <h2 className="sectionTitle">Research & Publications</h2>
                 <div className="sectionLine" style={{ margin: "10px auto 0" }} />
               </div>
 
-              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
-                Add your papers, blog posts, or technical notes here.
-              </p>
+              <div style={{ maxWidth: 900, margin: "16px auto 0" }}>
+                <Paper
+                  venue="43rd ISARC"
+                  title="An automated framework to quantify exposure of informal urban settlements using UAV and Scan-to-BIM"
+                  year="2026"
+                  type= "Conference paper"
+                  doi="In process"
+                  link="https://doi.org/10.22260/ISARC2025/0194"
+                  tags={["Scan-to-BIM", "Urban Digitalization", "UAV"]}
+                  logo="/conferences/ISARC-2026.png"
+                />
+
+                <Paper
+                  venue="42nd ISARC"
+                  title="Algorithm development for automatic detection of progressive damage in tunnel cross-sectional geometry"
+                  year="2025"
+                  type= "Conference paper"
+                  doi="10.22260/ISARC2025/0194"
+                  link="https://doi.org/10.22260/ISARC2025/0194"
+                  tags={["Tunnel", "Point cloud", "Open3D"]}
+                  logo="/conferences/ISARC-2025.png"
+                />
+
+                <Paper
+                  venue="41st ISARC"
+                  title="3D reconstruction of a bridge with concrete damage classification using deep learning"
+                  year="2024"
+                  type= "Conference paper"
+                  doi="10.22260/ISARC2024/0094"
+                  link="https://doi.org/10.22260/ISARC2024/0094"
+                  tags={["Deep Learning", "Damage Detection", "3D Reconstruction"]}
+                  logo="/conferences/ISARC-2024.png"
+                />
+
+                <Paper
+                  venue="40th ISARC"
+                  title="3D Printing: An opportunity for the sustainable development of building construction"
+                  year="2023"
+                  type= "Conference paper"
+                  doi="10.22260/ISARC2023/0096"
+                  link="https://doi.org/10.22260/ISARC2023/0096"
+                  tags={["3D Printing", "Sustainable Construction"]}
+                  logo="/conferences/ISARC-2023.png"
+                />
+
+                <Paper
+                  venue="IX CONIITI"
+                  title="Robotics in building construction: Advantages and Barriers"
+                  year="2023"
+                  type= "Conference paper"
+                  doi="10.1109/CONIITI61170.2023.10324131"
+                  link="https://doi.org/10.1109/CONIITI61170.2023.10324131"
+                  tags={["Robotics", "Construction", "Automation"]}
+                  logo="/conferences/CONIITI.png"
+                />
+
+                <Paper
+                  venue="IX CONIITI"
+                  title="Virtual reality for design and site planning in construction projects: Advantages and barriers"
+                  year="2023"
+                  type= "Conference paper"
+                  doi="10.1109/CONIITI61170.2023.10324023"
+                  link="https://doi.org/10.1109/CONIITI61170.2023.10324023"
+                  tags={["VR", "Planning", "AEC"]}
+                  logo="/conferences/CONIITI.png"
+                />              
+
+                <Paper
+                  venue="VII CONIITI"
+                  title={`An Analysis of LEED Certification's Adaptation to Design and Construction of Sustainable Buildings in Peru`}
+                  year="2021"
+                  type= "Conference paper"
+                  doi="10.1109/CONIITI53815.2021.9619628"
+                  link="https://doi.org/10.1109/CONIITI53815.2021.9619628"
+                  tags={["Sustainability", "LEED", "Construction"]}
+                  logo="/conferences/CONIITI.png"
+                />
+
+              </div>
             </div>
 
-            {/* VIDEOS */}
+            {/* VIDEOS 
             <div className="sectionBlock" id="videos">
               <div style={{ textAlign: "center" }}>
                 <h2 className="sectionTitle">Videos</h2>
@@ -292,9 +402,9 @@ export default function Page() {
               <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
                 Talks, workshops, or YouTube content.
               </p>
-            </div>
+            </div>*/}
 
-            {/* RECOMMENDATIONS */}
+            {/* RECOMMENDATIONS 
             <div className="sectionBlock" id="recommendations">
               <div style={{ textAlign: "center" }}>
                 <h2 className="sectionTitle">Recommendations</h2>
@@ -304,7 +414,8 @@ export default function Page() {
               <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
                 Add testimonials from LinkedIn or clients (short and specific).
               </p>
-            </div>
+            </div>*/}
+
           </section>
         </div>
       </div>
@@ -312,57 +423,12 @@ export default function Page() {
   );
 }
 
-function MiniCard({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="card" style={{ padding: 16 }}>
-      <div style={{ fontWeight: 900, marginBottom: 10 }}>{title}</div>
-      <ul style={{ margin: 0, paddingLeft: 18, color: "var(--muted)", lineHeight: 1.9 }}>
-        {items.map((x) => (
-          <li key={x}>{x}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function ProjectRow({
-  title,
-  desc,
-  tags,
-  link,
-}: {
-  title: string;
-  desc: string;
-  tags: string[];
-  link: string;
-}) {
-  return (
-    <a
-      className="card"
-      href={link}
-      target="_blank"
-      rel="noreferrer"
-      style={{ padding: 16, display: "block" }}
-    >
-      <div style={{ fontWeight: 900 }}>{title}</div>
-      <div style={{ marginTop: 6, color: "var(--muted)", lineHeight: 1.7 }}>{desc}</div>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 10 }}>
-        {tags.map((t) => (
-          <span key={t} className="tag">
-            {t}
-          </span>
-        ))}
-      </div>
-    </a>
-  );
-}
-
-
 
 function Paper({
   venue,
   title,
   year,
+  type,
   doi,
   link,
   tags,
@@ -371,6 +437,7 @@ function Paper({
   venue: string;
   title: string;
   year: string;
+  type: string;
   doi: string;
   link: string;
   tags: string[];
@@ -382,7 +449,7 @@ function Paper({
       style={{
         padding: 18,
         marginBottom: 14,
-        background: "#ffffff", // ✅ fondo blanco
+        background: "var(--bg)", // ✅ fondo blanco
       }}
     >
       {/* Header */}
@@ -399,7 +466,7 @@ function Paper({
           <div style={{ fontWeight: 900, marginBottom: 6 }}>
             {venue}{" "}
             <span style={{ color: "var(--muted)", fontWeight: 700 }}>
-              • {year}
+              • {type} • {year}
             </span>
           </div>
 
@@ -485,3 +552,303 @@ function Paper({
   );
 }
 
+
+import {
+  Code2,
+  Cpu,
+  Layers3,
+  Boxes,
+  Package,
+  Cloud,
+  PenLine,
+  FileText,
+  Presentation,
+  Braces,
+  Workflow,
+} from "lucide-react";
+
+type SkillIcon =
+  | "python"
+  | "revit"
+  | "node"
+  | "bim"
+  | "cloud"
+  | "twin"
+  | "iot"
+  | "write"
+  | "paper"
+  | "talk";
+
+function iconForSkill(name: SkillIcon) {
+  // “logo-like” icon mapping (clean and consistent)
+  switch (name) {
+    case "python":
+      return <Braces size={16} />;
+    case "revit":
+      return <Package size={16} />;
+    case "node":
+      return <Code2 size={16} />;
+    case "bim":
+      return <Layers3 size={16} />;
+    case "cloud":
+      return <Cloud size={16} />;
+    case "twin":
+      return <Boxes size={16} />;
+    case "iot":
+      return <Cpu size={16} />;
+    case "write":
+      return <PenLine size={16} />;
+    case "paper":
+      return <FileText size={16} />;
+    case "talk":
+      return <Presentation size={16} />;
+    default:
+      return <Workflow size={16} />;
+  }
+}
+
+function ExpertCard({
+  title,
+  items,
+}: {
+  title: string;
+  items: { icon: SkillIcon; label: string; hint?: string }[];
+}) {
+  return (
+    <div className="card" style={{ padding: 16, background: "var(--bg)" }}>
+      <div style={{ fontWeight: 900, marginBottom: 12 }}>{title}</div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {items.map((it) => (
+          <SkillChip key={it.label} icon={it.icon} label={it.label} hint={it.hint} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SkillChip({
+  icon,
+  label,
+  hint,
+}: {
+  icon: SkillIcon;
+  label: string;
+  hint?: string;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        alignItems: "center",
+        padding: "10px 12px",
+        borderRadius: 14,
+        border: "1px solid var(--border)",
+        background: "var(--surface)",
+      }}
+    >
+      {/* “logo bubble” */}
+      <div
+        style={{
+          width: 36,
+          height: 36,
+          borderRadius: 12,
+          border: "1px solid var(--border)",
+          background: "var(--surface)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        {iconForSkill(icon)}
+      </div>
+
+      <div style={{ minWidth: 0 }}>
+        <div style={{ fontWeight: 850, lineHeight: 1.2 }}>{label}</div>
+        {hint ? (
+          <div
+            style={{
+              fontSize: 13,
+              color: "var(--muted)",
+              marginTop: 4,
+              lineHeight: 1.3,
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            title={hint}
+          >
+            {hint}
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+
+import { QrCode, Ruler, ScanLine } from "lucide-react";
+
+type ProjectIcon = "navis" | "dalux" | "scan2bim" | "iot" | "revitqa";
+import { CheckCircle2 } from "lucide-react";
+function iconForProject(kind: ProjectIcon) {
+  switch (kind) {
+    case "navis":
+      return <Ruler size={18} />;
+    case "dalux":
+      return <QrCode size={18} />;
+    case "scan2bim":
+      return <ScanLine size={18} />;
+    case "iot":
+      return <Cpu size={18} />;
+    case "revitqa":
+      return <CheckCircle2 size={18} />; // ✅ new
+    default:
+      return <Boxes size={18} />;
+  }
+}
+function BigProjectCard({
+  icon,
+  title,
+  desc,
+  impact,
+  tags,
+  links,
+  highlights,
+  images,
+}: {
+  icon: ProjectIcon;
+  title: string;
+  desc: string;
+  impact: string[];
+  tags: string[];
+  links?: { label: string; href: string }[];
+  highlights?: string[];
+  images?: string[];
+}) {
+  return (
+    <div className="card" style={{ padding: 18, background: "var(--bg)" }}>
+      
+      {/* HEADER */}
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div
+          style={{
+            width: 36,
+            height: 36,
+            borderRadius: 12,
+            border: "1px solid var(--border)",
+            background: "var(--surface)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {iconForProject(icon)}
+        </div>
+        <div style={{ fontWeight: 950, fontSize: 16 }}>{title}</div>
+      </div>
+
+      {/* DESCRIPTION */}
+      <div style={{ marginTop: 10, color: "var(--muted)", lineHeight: 1.75 }}>
+        {desc}
+      </div>
+
+      {/* HIGHLIGHTS */}
+      {highlights?.length ? (
+        <ul style={{ marginTop: 12, paddingLeft: 18, color: "var(--muted)", lineHeight: 1.85 }}>
+          {highlights.map((h) => (
+            <li key={h}>{h}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      {/* IMAGES (NOW ABOVE IMPACT) */}
+      {images?.length ? (
+        <div
+          style={{
+            marginTop: 18,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 12,
+          }}
+        >
+          {images.map((img) => (
+            <div
+              key={img}
+              style={{
+                borderRadius: 14,
+                overflow: "hidden",
+                border: "1px solid var(--border)",
+                background: "#ffffff",
+              }}
+            >
+              <Image
+                src={img}
+                alt="Project visual"
+                width={500}
+                height={300}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {/* IMPACT SECTION (NOW BELOW IMAGES) */}
+      <div
+        style={{
+          marginTop: 20,
+          border: "1px solid var(--border)",
+          borderRadius: 16,
+          padding: 14,
+          background: "var(--surface)",
+        }}
+      >
+        <div style={{ fontWeight: 900, marginBottom: 10 }}>Impact</div>
+
+        <div style={{ display: "grid", gap: 8 }}>
+          {impact.map((x) => (
+            <div
+              key={x}
+              style={{
+                padding: "8px 10px",
+                borderRadius: 12,
+                border: "1px solid var(--border)",
+                background: "var(--surface)",
+                fontSize: 13,
+                color: "var(--muted)",
+              }}
+            >
+              {x}
+            </div>
+          ))}
+        </div>
+
+        {links?.length ? (
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 12 }}>
+            {links.map((l) => (
+              <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="btn">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        ) : null}
+      </div>
+
+      {/* TAGS */}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 14 }}>
+        {tags.map((t) => (
+          <span key={t} className="tag">
+            {t}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
