@@ -229,9 +229,9 @@ export default function Page() {
                     { label: "Overview", href: "#" },
                   ]}
                   images={[
-                    "/projects/revisionlap/revisionlap.png",
-                    "/projects/revisionlap/revisionlap2.png",
-                    "/projects/revisionlap/revisionlap3.png",
+                    "/projects/revisionlap/Revisionlap.png",
+                    "/projects/revisionlap/Revisionlap2.png",
+                    "/projects/revisionlap/Revisionlap3.png",
                   ]}
                   highlights={[
                     "Automatic geometry checks + data validation rules",
