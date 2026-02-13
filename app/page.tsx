@@ -52,7 +52,7 @@ export default function Page() {
               />
               <div>
                 <div style={{ fontWeight: 900, letterSpacing: 0.2 }}>CJNunezV</div>
-                <div style={{ fontSize: 12, color: "var(--muted)" }}>AI Engineer</div>
+                <div style={{ fontSize: 12, color: "var(--muted)" }}>Civil Engineer</div>
               </div>
             </div>
 
