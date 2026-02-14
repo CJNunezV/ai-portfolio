@@ -406,6 +406,7 @@ export default function Page() {
               <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
                 <ConferenceCard
                   country="Peru"
+                  countryCode="pe"
                   event="COREIC 2025"
                   city="Abancay"
                   year="2025"
