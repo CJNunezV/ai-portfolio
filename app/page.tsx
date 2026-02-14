@@ -405,41 +405,79 @@ export default function Page() {
 
               <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
                 <ConferenceCard
-                  flag="🇯🇵"
-                  country="Japan"
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="COREIC 2025"
+                  city="Abancay"
+                  year="2025"
+                  photos={[
+                    "/talks/coreic2025/COREIC1.jpg",
+                    "/talks/coreic2025/COREIC2025.jpg",
+                    "/talks/coreic2025/COREIC20252.jpg",
+                  ]}
+                />
+                <ConferenceCard
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="BIMFIC"
+                  city="Lima"
+                  year="2025"
+                  photos={[
+                    "/talks/bimfic2025/BIMFIC.jpg",
+                    "/talks/bimfic2025/BIMFIC2.jpg",
+                    "/talks/bimfic2025/BIMFIC3.jpg",
+                  ]}
+                />
+
+                <ConferenceCard
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="CONEIC 2025"
+                  city="Huaraz"
+                  year="2025"
+                  photos={[
+                    "/talks/coneic2025/CONEIC.jpg",
+                    "/talks/coneic2025/CONEIC2.jpg",
+                    "/talks/coneic2025/CONEIC3.jpg",
+                  ]}
+                />
+
+                <ConferenceCard
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="FOREIC 2025"
+                  city="Lima"
+                  year="2025"
+                  photos={[
+                    "/talks/foreic2025/FOREIC.jpg",
+                    "/talks/foreic2025/FOREIC2.jpg",
+                    "/talks/foreic2025/FOREIC3.jpg",
+                  ]}
+                />
+
+                <ConferenceCard
+                  flag="FR"
+                  country="France"
                   event="ISARC 2024"
-                  city="(International Symposium on Automation and Robotics in Construction)"
+                  city="Lille"
                   year="2024"
                   photos={[
-                    "/talks/isarc-2024/1.jpg",
-                    "/talks/isarc-2024/2.jpg",
-                    "/talks/isarc-2024/3.jpg",
+                    "/talks/isarc2024/ISARC2024.jpg",
+                    "/talks/isarc2024/ISARC20242.jpg",
+                    "/talks/isarc2024/ISARC20243.jpg",
                   ]}
                 />
 
                 <ConferenceCard
-                  flag="🇵🇪"
-                  country="Peru"
-                  event="CONIITI 2023"
-                  city="(IEEE Conference)"
+                  flag="IN"
+                  country="India"
+                  event="ISARC 2023"
+                  city="Chennai"
                   year="2023"
                   photos={[
-                    "/talks/coniiti-2023/1.jpg",
-                    "/talks/coniiti-2023/2.jpg",
-                    "/talks/coniiti-2023/3.jpg",
-                  ]}
-                />
-
-                <ConferenceCard
-                  flag="🇵🇪"
-                  country="Peru"
-                  event="CONIITI 2021"
-                  city="(IEEE Conference)"
-                  year="2021"
-                  photos={[
-                    "/talks/coniiti-2021/1.jpg",
-                    "/talks/coniiti-2021/2.jpg",
-                    "/talks/coniiti-2021/3.jpg",
+                    "/talks/isarc2023/ISARC2023.jpeg",
+                    "/talks/isarc2023/ISARC20232.jpeg",
+                    "/talks/isarc2023/ISARC20233.jpeg",
                   ]}
                 />
               </div>
