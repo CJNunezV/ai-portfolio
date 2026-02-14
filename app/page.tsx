@@ -405,7 +405,6 @@ export default function Page() {
 
               <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
                 <ConferenceCard
-                  flag="🇵🇪"
                   country="Peru"
                   event="COREIC 2025"
                   city="Abancay"
@@ -417,8 +416,8 @@ export default function Page() {
                   ]}
                 />
                 <ConferenceCard
-                  flag="🇵🇪"
                   country="Peru"
+                  countryCode="pe"
                   event="BIMFIC"
                   city="Lima"
                   year="2025"
@@ -430,8 +429,8 @@ export default function Page() {
                 />
 
                 <ConferenceCard
-                  flag="🇵🇪"
                   country="Peru"
+                  countryCode="pe"
                   event="CONEIC 2025"
                   city="Huaraz"
                   year="2025"
@@ -443,8 +442,8 @@ export default function Page() {
                 />
 
                 <ConferenceCard
-                  flag="🇵🇪"
                   country="Peru"
+                  countryCode="pe"
                   event="FOREIC 2025"
                   city="Lima"
                   year="2025"
@@ -456,8 +455,8 @@ export default function Page() {
                 />
 
                 <ConferenceCard
-                  flag="FR"
                   country="France"
+                  countryCode="fr"
                   event="ISARC 2024"
                   city="Lille"
                   year="2024"
@@ -469,8 +468,8 @@ export default function Page() {
                 />
 
                 <ConferenceCard
-                  flag="IN"
                   country="India"
+                  countryCode="in"
                   event="ISARC 2023"
                   city="Chennai"
                   year="2023"
