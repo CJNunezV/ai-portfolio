@@ -61,7 +61,7 @@ export default function Page() {
               <a href="#expertise">Expertise</a>
               <a href="#projects">Projects</a>
               <a href="#research">Research & Publications</a>
-              <a href="#videos">Videos</a>
+              <a href="#videos">Talks</a>
               <a href="#recommendations">Recommendations</a>
 
               <button className="btn" onClick={toggleTheme} aria-label="Toggle theme">
@@ -389,6 +389,59 @@ export default function Page() {
                   logo="/conferences/CONIITI.png"
                 />
 
+              </div>
+            </div>
+
+            {/* TALKS & CONFERENCES */}
+            <div className="sectionBlock" id="talks">
+              <div style={{ textAlign: "center" }}>
+                <h2 className="sectionTitle">Talks & Conferences</h2>
+                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
+              </div>
+
+              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
+                Conferences, presentations, and academic events where I’ve shared research and engineering work.
+              </p>
+
+              <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
+                <ConferenceCard
+                  flag="🇯🇵"
+                  country="Japan"
+                  event="ISARC 2024"
+                  city="(International Symposium on Automation and Robotics in Construction)"
+                  year="2024"
+                  photos={[
+                    "/talks/isarc-2024/1.jpg",
+                    "/talks/isarc-2024/2.jpg",
+                    "/talks/isarc-2024/3.jpg",
+                  ]}
+                />
+
+                <ConferenceCard
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="CONIITI 2023"
+                  city="(IEEE Conference)"
+                  year="2023"
+                  photos={[
+                    "/talks/coniiti-2023/1.jpg",
+                    "/talks/coniiti-2023/2.jpg",
+                    "/talks/coniiti-2023/3.jpg",
+                  ]}
+                />
+
+                <ConferenceCard
+                  flag="🇵🇪"
+                  country="Peru"
+                  event="CONIITI 2021"
+                  city="(IEEE Conference)"
+                  year="2021"
+                  photos={[
+                    "/talks/coniiti-2021/1.jpg",
+                    "/talks/coniiti-2021/2.jpg",
+                    "/talks/coniiti-2021/3.jpg",
+                  ]}
+                />
               </div>
             </div>
 
@@ -847,6 +900,99 @@ function BigProjectCard({
           <span key={t} className="tag">
             {t}
           </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+function ConferenceCard({
+  flag,
+  country,
+  event,
+  city,
+  year,
+  photos,
+}: {
+  flag: string;
+  country: string;
+  event: string;
+  city?: string;
+  year: string;
+  photos: string[];
+}) {
+  return (
+    <div className="card" style={{ padding: 18, background: "var(--bg)" }}>
+      {/* Header */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: 14,
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <div
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 14,
+              border: "1px solid var(--border)",
+              background: "var(--surface)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 22,
+            }}
+            aria-label={country}
+            title={country}
+          >
+            {flag}
+          </div>
+
+          <div>
+            <div style={{ fontWeight: 950, fontSize: 16, lineHeight: 1.2 }}>
+              {event}
+            </div>
+            <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 4 }}>
+              {country} {city ? `• ${city}` : ""}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ color: "var(--muted)", fontWeight: 800 }}>{year}</div>
+      </div>
+
+      {/* Photo grid (3 photos) */}
+      <div
+        style={{
+          marginTop: 14,
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: 12,
+        }}
+      >
+        {photos.slice(0, 3).map((src) => (
+          <div
+            key={src}
+            style={{
+              borderRadius: 16,
+              overflow: "hidden",
+              border: "1px solid var(--border)",
+              background: "var(--surface)",
+            }}
+          >
+            <Image
+              src={src}
+              alt={`${event} photo`}
+              width={900}
+              height={600}
+              style={{ width: "100%", height: 200, objectFit: "cover" }}
+            />
+          </div>
         ))}
       </div>
     </div>
