@@ -61,7 +61,7 @@ export default function Page() {
               <a href="#expertise">Expertise</a>
               <a href="#projects">Projects</a>
               <a href="#research">Research & Publications</a>
-              <a href="#videos">Talks</a>
+              <a href="#videos">Talks & Conferences</a>
               <a href="#recommendations">Recommendations</a>
 
               <button className="btn" onClick={toggleTheme} aria-label="Toggle theme">
