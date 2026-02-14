@@ -987,7 +987,7 @@ function ConferenceCard({
             title={country}
           >
             <Image
-              src={`/flags/${countryCode}.svg`}
+              src={`/flags/4x3/${countryCode}.svg`}
               alt={country}
               width={28}
               height={20}
