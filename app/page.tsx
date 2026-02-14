@@ -411,8 +411,8 @@ export default function Page() {
                   city="Abancay"
                   year="2025"
                   photos={[
-                    "/talks/coreic2025/COREIC1.jpg",
                     "/talks/coreic2025/COREIC2025.jpg",
+                    "/talks/coreic2025/COREIC1.jpg",
                     "/talks/coreic2025/COREIC20252.jpg",
                   ]}
                 />
@@ -944,17 +944,16 @@ function BigProjectCard({
   );
 }
 
-
 function ConferenceCard({
-  flag,
   country,
+  countryCode,
   event,
   city,
   year,
   photos,
 }: {
-  flag: string;
   country: string;
+  countryCode: string;
   event: string;
   city?: string;
   year: string;
@@ -983,16 +982,21 @@ function ConferenceCard({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 22,
             }}
             aria-label={country}
             title={country}
           >
-            {flag}
+            <Image
+              src={`/flags/${countryCode}.svg`}
+              alt={country}
+              width={28}
+              height={20}
+              style={{ objectFit: "contain" }}
+            />
           </div>
 
           <div>
-            <div style={{ fontWeight: 950, fontSize: 16, lineHeight: 1.2 }}>
+            <div style={{ fontWeight: 950, fontSize: 16 }}>
               {event}
             </div>
             <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 4 }}>
@@ -1001,10 +1005,12 @@ function ConferenceCard({
           </div>
         </div>
 
-        <div style={{ color: "var(--muted)", fontWeight: 800 }}>{year}</div>
+        <div style={{ color: "var(--muted)", fontWeight: 800 }}>
+          {year}
+        </div>
       </div>
 
-      {/* Photo grid (3 photos) */}
+      {/* Photos */}
       <div
         style={{
           marginTop: 14,
