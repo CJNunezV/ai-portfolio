@@ -512,7 +512,7 @@ export default function Page() {
 
                 <RecommendationCard
                   name="Oscar Manuel Solis Garcia"
-                  role="Researcher"
+                  role="Research assistant"
                   photo="/recommendations/solis.png"
                   text="Christopher is a dedicated professional who approaches any challenge with sound judgment and determination. He stands out for his strong leadership and communication skills, which enable him to collaborate effectively and motivate his team. I deeply admire and respect him for his passion for research and his consistent commitment to excellence."
                   linkedin="https://www.linkedin.com/in/oscar-manuel-solis-garcia-123b83226/"
