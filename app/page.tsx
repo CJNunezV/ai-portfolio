@@ -503,25 +503,35 @@ export default function Page() {
                 }}
               >
                 <RecommendationCard
-                  name="Full Name"
-                  role="Role • Company"
-                  photo="/recommendations/john.jpg"
-                  text="Write here the recommendation paragraph you received..."
-                  linkedin="https://www.linkedin.com/in/username/"
+                  name="Marck Steewar Regalado Espinoza"
+                  role="Professor • Researcher"
+                  photo="/recommendations/regalado.jpg"
+                  text="Christopher is a highly enthusiastic, entrepreneurial, and dedicated young engineer. I have been able to witness his growth throughout his academic journey and professional career, where he has consistently demonstrated the ability to face any challenge. His profile embodies all the key qualities for success."
+                  linkedin="https://www.linkedin.com/in/marck-regalado-espinoza/"
                 />
 
                 <RecommendationCard
-                  name="Full Name"
-                  role="Role • Company"
-                  photo="/recommendations/maria.jpg"
+                  name="Oscar Manuel Solis Garcia"
+                  role="Researcher"
+                  photo="/recommendations/solis.png"
                   text="Write here the recommendation paragraph you received..."
+                  linkedin="https://www.linkedin.com/in/oscar-manuel-solis-garcia-123b83226/"
                 />
 
                 <RecommendationCard
-                  name="Full Name"
-                  role="Role • Company"
-                  photo="/recommendations/ana.jpg"
+                  name="Jorge Rojas Rondan"
+                  role="Researcher"
+                  photo="/recommendations/rojas.jpg"
                   text="Write here the recommendation paragraph you received..."
+                  linkedin="https://www.linkedin.com/in/jorge-rojas-rondan/"
+                />
+
+                <RecommendationCard
+                  name="Richard Sauñe Huapaya"
+                  role="VDC Specialist"
+                  photo="/recommendations/sauñe.jpg"
+                  text="Write here the recommendation paragraph you received..."
+                  linkedin="https://www.linkedin.com/in/richard-sau%C3%B1e-huapaya/"
                 />
               </div>
             </div>
