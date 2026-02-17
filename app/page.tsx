@@ -483,19 +483,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* VIDEOS 
-            <div className="sectionBlock" id="videos">
-              <div style={{ textAlign: "center" }}>
-                <h2 className="sectionTitle">Videos</h2>
-                <div className="sectionLine" style={{ margin: "10px auto 0" }} />
-              </div>
-
-              <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
-                Talks, workshops, or YouTube content.
-              </p>
-            </div>*/}
-
-            {/* RECOMMENDATIONS 
+            {/* RECOMMENDATIONS */}
             <div className="sectionBlock" id="recommendations">
               <div style={{ textAlign: "center" }}>
                 <h2 className="sectionTitle">Recommendations</h2>
@@ -503,9 +491,40 @@ export default function Page() {
               </div>
 
               <p className="sectionText" style={{ maxWidth: 820, margin: "14px auto 0" }}>
-                Add testimonials from LinkedIn or clients (short and specific).
+                Testimonials from colleagues and collaborators.
               </p>
-            </div>*/}
+
+              <div
+                style={{
+                  marginTop: 18,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                  gap: 14,
+                }}
+              >
+                <RecommendationCard
+                  name="Full Name"
+                  role="Role • Company"
+                  photo="/recommendations/john.jpg"
+                  text="Write here the recommendation paragraph you received..."
+                  linkedin="https://www.linkedin.com/in/username/"
+                />
+
+                <RecommendationCard
+                  name="Full Name"
+                  role="Role • Company"
+                  photo="/recommendations/maria.jpg"
+                  text="Write here the recommendation paragraph you received..."
+                />
+
+                <RecommendationCard
+                  name="Full Name"
+                  role="Role • Company"
+                  photo="/recommendations/ana.jpg"
+                  text="Write here the recommendation paragraph you received..."
+                />
+              </div>
+            </div>
 
           </section>
         </div>
@@ -1042,3 +1061,77 @@ function ConferenceCard({
     </div>
   );
 }
+
+function RecommendationCard({
+  name,
+  role,
+  photo,
+  text,
+  linkedin,
+}: {
+  name: string;
+  role: string;
+  photo: string;
+  text: string;
+  linkedin?: string;
+}) {
+  return (
+    <div className="card" style={{ padding: 18, background: "var(--bg)" }}>
+      <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+        <div
+          style={{
+            width: 54,
+            height: 54,
+            borderRadius: 16,
+            overflow: "hidden",
+            border: "1px solid var(--border)",
+            background: "var(--surface)",
+            flexShrink: 0,
+          }}
+        >
+          <Image
+            src={photo}
+            alt={name}
+            width={120}
+            height={120}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
+
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontWeight: 950, lineHeight: 1.2 }}>{name}</div>
+          <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 4 }}>
+            {role}
+          </div>
+        </div>
+
+        {linkedin ? (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="btn"
+            style={{ marginLeft: "auto", fontSize: 13, padding: "8px 12px" }}
+          >
+            LinkedIn
+          </a>
+        ) : null}
+      </div>
+
+      <p
+        style={{
+          marginTop: 14,
+          marginBottom: 0,
+          color: "var(--muted)",
+          lineHeight: 1.8,
+          fontSize: 14,
+        }}
+      >
+        “{text}”
+      </p>
+    </div>
+  );
+}
+
+
+
