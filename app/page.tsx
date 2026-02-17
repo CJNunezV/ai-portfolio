@@ -514,7 +514,7 @@ export default function Page() {
                   name="Oscar Manuel Solis Garcia"
                   role="Researcher"
                   photo="/recommendations/solis.png"
-                  text="Write here the recommendation paragraph you received..."
+                  text="Christopher is a dedicated professional who approaches any challenge with sound judgment and determination. He stands out for his strong leadership and communication skills, which enable him to collaborate effectively and motivate his team. I deeply admire and respect him for his passion for research and his consistent commitment to excellence."
                   linkedin="https://www.linkedin.com/in/oscar-manuel-solis-garcia-123b83226/"
                 />
 
