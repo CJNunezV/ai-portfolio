@@ -522,17 +522,18 @@ export default function Page() {
                   name="Jorge Rojas Rondan"
                   role="Researcher"
                   photo="/recommendations/rojas.jpg"
-                  text="Write here the recommendation paragraph you received..."
+                  text="I had the opportunity to meet Christopher during his senior year as an undergraduate student at my alma mater and he approached me for advice. From our first interactions, he stood out as a highly self-motivated and proactive young engineer.Christopher demonstrates strong dedication in everything he undertakes. He possesses a strong  drive for self-learning, consistently seeking to expand his knowledge beyond classroom requirements. His intellectual curiosity and willingness to explore new ideas reflect both maturity and a genuine passion for growth. I see great potential in Christopher, particularly in the area of research and the implementation of innovative technologies within the construction industry."
                   linkedin="https://www.linkedin.com/in/jorge-rojas-rondan/"
                 />
 
+                {/*  
                 <RecommendationCard
                   name="Richard Sauñe Huapaya"
                   role="VDC Specialist"
                   photo="/recommendations/sauñe.jpg"
                   text="Write here the recommendation paragraph you received..."
                   linkedin="https://www.linkedin.com/in/richard-sau%C3%B1e-huapaya/"
-                />
+                />*/}
               </div>
             </div>
 
