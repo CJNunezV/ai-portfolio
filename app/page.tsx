@@ -145,7 +145,7 @@ export default function Page() {
                   My mission is to advance digital construction and smart building technologies through AI and computational methods, translating complex spatial and engineering challenges into high-impact, measurable solutions for research, industry, and academia.
                 </p>
                 <p>
-                  If you want to collaborate on research, academic projects, or innovative engineering solutions, feel free to <a href="christopher.nunez.v@gmail.com" style={{ color: "var(--primary)", fontWeight: 700 }}>write me</a>.
+                  If you want to collaborate on research, academic projects, or innovative engineering solutions, feel free to <a href="mailto:christopher.nunez.v@gmail.com" style={{ color: "var(--primary)", fontWeight: 700 }}>write me</a>.
                 </p>
               </div>
             </div>
