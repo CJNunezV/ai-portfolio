@@ -110,9 +110,11 @@ export default function Page() {
               <a className="iconBtn" href="https://www.researchgate.net/profile/Christopher-Nunez-Varillas?ev=hdr_xprf" target="_blank" rel="noreferrer" aria-label="ResearchGate">
                 <BookOpen size={18} />
               </a>
-              <a className="iconBtn" href="christopher.nunez.v@gmail.com">
+              <a className="iconBtn" href="mailto:christopher.nunez.v@gmail.com" aria-label="Email">
                 <Mail size={18} />
               </a>
+
+              {/* RIGHT CONTENT 
               <a className="iconBtn" href="#" target="_blank" rel="noreferrer" aria-label="Resume">
                 <FileDown size={18} />
               </a>
@@ -122,6 +124,7 @@ export default function Page() {
               <a className="iconBtn" href="https://twitter.com" target="_blank" rel="noreferrer">
                 <Twitter size={18} />
               </a>
+              */}
             </div>
           </aside>
 
